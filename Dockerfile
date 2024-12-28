@@ -1,4 +1,4 @@
-FROM ubuntu: latest
+FROM ubuntu
 
 Run apt-get update && apt-get install -y \
     python3.10 \
@@ -11,4 +11,4 @@ COPY feed.py /usr/bin/feed.py
 
 COPY entrypoint.sh /entrypoint.sh 
 
-ENNTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
