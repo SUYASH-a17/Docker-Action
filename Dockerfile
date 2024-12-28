@@ -7,8 +7,6 @@ RUN apt-get update && apt-get install -y \
     python3-venv \
     git
 
-# Upgrade pip to the latest version
-RUN pip3 install --upgrade pip
 
 # Install Python packages
 RUN pip3 install PyYAML
