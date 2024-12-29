@@ -1,11 +1,21 @@
 FROM ubuntu:latest
 
+# Set environment variable to prevent interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     python3-pip \
     python3-venv \
+    python3-distutils \
     git \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    libpython3-dev \
+    software-properties-common && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip to the latest version
 RUN pip3 install --upgrade pip
